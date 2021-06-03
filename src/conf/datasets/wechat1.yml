@@ -1,0 +1,9 @@
+Baseinfo:
+  name: wechat01
+
+DeepFM:
+  epoch_num: 100
+
+WideAndDeep:
+  epoch_num: 100
+
