@@ -1,0 +1,5 @@
+BaseInfo:
+  name: criteo-sample
+
+DeepFM:
+  epoch_num: 100

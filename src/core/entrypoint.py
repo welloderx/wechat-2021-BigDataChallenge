@@ -1,3 +1,4 @@
+from core.tasks.deepfm import DeepFM_Manager
 
 
 class EntryPoint(object):
@@ -5,4 +6,8 @@ class EntryPoint(object):
         self.cfg = cfg
 
     def start(self):
-        pass
+        if self.cfg.task == 'DeepFM':
+            task = DeepFM_Manager(self.cfg)
+            task.start()
+        else:
+            raise ValueError("unknown task name")

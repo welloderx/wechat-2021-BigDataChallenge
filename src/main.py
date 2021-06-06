@@ -16,7 +16,7 @@ registered_task_list = ['DeepFM', 'WideAndDeep']
 def get_config_object_and_parse_args():
     # first time resolve sys.argv
     parser = argparse.ArgumentParser()
-    parser.add_argument('--dataset_name', type=str, default='wechat1', help='dataset name')
+    parser.add_argument('--dataset_name', type=str, default='criteo', help='dataset name')
     parser.add_argument('--task', type=str, default='DeepFM',
                         choices=registered_task_list,
                         help='task_name: {}'.format(registered_task_list))
@@ -61,7 +61,7 @@ def init_all(cfg: UnionConfig):
             cfg.output_folder_path
         )
     else:
-        raise Exception("unknown task name")
+        raise ValueError("unknown task name")
 
     log_filepath = cfg.tmpout_folder_path + "/{ID}.log".format(ID=cfg.ID)
     cfg.logger = LoggerUtil(logfile=log_filepath, disableFile=False).get_logger()
