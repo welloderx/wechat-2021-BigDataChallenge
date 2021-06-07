@@ -10,14 +10,14 @@ import copy
 import sys
 
 
-registered_task_list = ['DeepFM', 'WideAndDeep']
+registered_task_list = ['DeepFM', 'LightGBM']
 
 
 def get_config_object_and_parse_args():
     # first time resolve sys.argv
     parser = argparse.ArgumentParser()
-    parser.add_argument('--dataset_name', type=str, default='criteo', help='dataset name')
-    parser.add_argument('--task', type=str, default='DeepFM',
+    parser.add_argument('--dataset_name', type=str, default='wechat1', help='dataset name')
+    parser.add_argument('--task', type=str, default='LightGBM',
                         choices=registered_task_list,
                         help='task_name: {}'.format(registered_task_list))
     args, unknown_args = parser.parse_known_args()

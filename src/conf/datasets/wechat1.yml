@@ -7,3 +7,5 @@ DeepFM:
 WideAndDeep:
   epoch_num: 100
 
+LightGBM:
+  epoch_num: 100
